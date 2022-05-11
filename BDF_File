@@ -1,6 +1,6 @@
 namespace MPSA41CH.BDF_Library
 {
-    class BDF_File
+    public static class BDF_File
     {
         // Generates a string with a specificied number of spaces
         private static string generateSpace(int length)
