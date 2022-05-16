@@ -25,30 +25,17 @@ namespace MPSA41CH.BDF_Library
             uint ChannelLength = (uint)readbuf.Length / 170;
             int sampleSize = (int)(ChannelLength);
 
-            byte[][][] Signal_save = new byte[40][][];
-            Signal_save[0][0][0] = 0;
-            for (int c = 0; c < 40; c++)
-            {
-                for (int p = 0; p < sampleSize; p++)
-                {
-                    Signal_save[c][p] = new byte[3];
-                }
-            }
-
-            byte temp_test = new byte();
-            //Assignment
             for (uint ch = 0; ch < 40; ch++)
             {
                 BDF_DataRecordSignalSample[] samples = new BDF_DataRecordSignalSample[sampleSize];
                 for (uint pos = 0; pos < ChannelLength; pos++)
                 {
+                    byte[] temp_save = new byte[3];
                     uint index = (pos * 170 + ch * 4 + 10);
-                    temp_test = readbuf[index];
-                    Signal_save[ch][pos][0] = temp_test;
-                    //Signal_save[ch][pos][0] = readbuf[index];
-                    Signal_save[ch][pos][1] = readbuf[index + 1];
-                    Signal_save[ch][pos][2] = readbuf[index + 2];
-                    samples[pos] = new BDF_DataRecordSignalSample(Signal_save[ch][pos]);
+                    temp_save[0] = readbuf[index];
+                    temp_save[1] = readbuf[index + 1];
+                    temp_save[2] = readbuf[index + 2];
+                    samples[pos] = new BDF_DataRecordSignalSample(temp_save);
                 }
                 header.bdfSignals[(int)ch].samples = samples;
             }
