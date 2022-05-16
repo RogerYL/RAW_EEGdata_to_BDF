@@ -8,7 +8,7 @@ namespace MPSA41CH.BDF_Library
     public class BDF_Header
     {
         //Add constants that define how many chars each field has
-        private const int NUM_CHARS_VERSION = 8;
+        private const int NUM_CHARS_VERSION = 7;
         private const int NUM_CHARS_PATIENT = 80;
         private const int NUM_CHARS_RECORDING = 80;
         private const int NUM_CHARS_START_DATE = 8;
