@@ -37,7 +37,7 @@ namespace MPSA41CH.BDF_Library
                 {
                     for (int k = 0; k < records[i].signals[j].samples.Length; k++)
                     {
-                        for (int n = 0; n < 3; n++)
+                        for (int n = 0; n < records[i].signals[j].samples[k].sample.Length; n++)
                         {
                             outData.Add(records[i].signals[j].samples[k].sample[n]);
                         }
