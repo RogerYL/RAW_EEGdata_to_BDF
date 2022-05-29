@@ -9,9 +9,9 @@ private void btn_SaveData_Click(object sender, EventArgs e)
             _newdatarecorded = false;
 
             SaveFileDialog dlg = new SaveFileDialog();
-            dlg.Filter = "信号数据文件(*.m41)|*.m41|EPROM数据文件(*.edf)|*.edf|BioSemi数据文件(*.bdf)|*.bdf";
+            dlg.Filter = "EPROM数据文件(*.edf)|*.edf|BioSemi数据文件(*.bdf)|*.bdf";
             dlg.Title = "保存数据文件";
-            dlg.FilterIndex = 3;
+            dlg.FilterIndex = 2;
             dlg.RestoreDirectory = true;
 
             if (DialogResult.OK != dlg.ShowDialog())
