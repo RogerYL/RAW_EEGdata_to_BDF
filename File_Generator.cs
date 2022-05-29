@@ -75,14 +75,14 @@ namespace MPSA41CH
 
             //Initial information
             string version = "BIOSEMI";
-            string recording = "TEST RECORD ID";
-            string patient = "TEST PATIENT ID";
+            string recording = "Startdate X X X X TEST RECORD ID";
+            string patient = "X X X X " + Patient_name;
             string startDate = "11.11.16";
             string startTime = "12.12.12";
-            string reserved = "RESERVED";
+            string reserved = "BDF+C";
             string numRecords = Convert.ToString(Calculate_numrecords);
             string durationRecord = Convert.ToString(Calculate_Time);
-            string ns = "40";
+            string ns = "42";
             BDF_Library.BDF_Header newHeader = new BDF_Library.BDF_Header(version, patient, recording, startDate, startTime, reserved, numRecords, durationRecord, ns);
             BDF_Library.Output_Holder.BDFHeaderHolder = newHeader;
 
